@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // CORS
 var corsOptions = {
-    origin: ['http://127.0.0.1:3000', 'http://localhost.3000'],
+    origin: ['http://127.0.0.1:3000', 'http://localhost:3001'],
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));

@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "d7b0cb25-4d88-4b7c-8208-e26f2ff8b135",
+		"name": "test-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26341686"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"firstName\": \"Quoc\",\n  \"lastName\": \"Huy\",\n  \"password\": \"123456\",\n  \"email\": \"huy123@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/user/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Task new",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "athorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiaGFpMTIzQGdtYWlsLmNvbSIsImlhdCI6MTcxMzc4MDUxMywiZXhwIjoxNzEzOTUzMzEzfQ.LmjU8eidyfROxjVSaJ_6hqHDNmEum91dOeljt7-4Tt8",
+						"type": "text"
+					},
+					{
+						"key": "x-client-id",
+						"value": "4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"taskName\": \"Play Footbal 001\",\n  \"description\": \"lear on The Coach\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/task/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Task Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"lear EL\",\n  \"description\": \"lear on The Coach\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/task/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get By user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "athorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiaHV5MTIzQGdtYWlsLmNvbSIsImlhdCI6MTcxMzc4MTA0OSwiZXhwIjoxNzEzOTUzODQ5fQ.SiMJkpzXXWRjaeOMCYpDbeu8J3a7AC5l2InoC2Afa00",
+						"type": "text"
+					},
+					{
+						"key": "x-client-id",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/task/getByUser"
+			},
+			"response": []
+		},
+		{
+			"name": "get All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "athorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiaHV5MTIzQGdtYWlsLmNvbSIsImlhdCI6MTcxMzc4MTA0OSwiZXhwIjoxNzEzOTUzODQ5fQ.SiMJkpzXXWRjaeOMCYpDbeu8J3a7AC5l2InoC2Afa00",
+						"type": "text"
+					},
+					{
+						"key": "x-client-id",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/task/getByUser"
+			},
+			"response": []
+		},
+		{
+			"name": "Task Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "athorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImVtYWlsIjoiaHV5MTIzQGdtYWlsLmNvbSIsImlhdCI6MTcxMzc4NzU0NiwiZXhwIjoxNzEzOTYwMzQ2fQ.T4-6IkJJUQxF5GfGhuNbLBAEuHCjgxPTrIc7vRISEbs",
+						"type": "text"
+					},
+					{
+						"key": "x-client-id",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/task/search/lear"
+			},
+			"response": []
+		},
+		{
+			"name": "Task Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "athorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoiaHV5MTIzMUBnbWFpbC5jb20iLCJpYXQiOjE3MTM3NzgzOTgsImV4cCI6MTcxMzk1MTE5OH0.w0QSi1-mgZ2Zw3v_X8xrwhlPdaB4IkV826hCIJXlR5c",
+						"type": "text"
+					},
+					{
+						"key": "x-client-id",
+						"value": "4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n  \"taskName\": \"lear EL111\",\n  \"description\": \"lear on The Coach\",\n  \"status\" : \"finished\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/task/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"email\": \"huy123@gmail.com\",\n  \"password\": \"123456\"\n \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/v1/api/user/login"
+			},
+			"response": []
+		}
+	]
+}

@@ -29,7 +29,7 @@ const KeyTokenService = async ({ userId, publicKey, privateKey, refreshToken }) 
     }
 };
 const findByUserId = async (userId) => {
-    return await KeyToken.findOne({ where: { userId } });
+    return await KeyToken.findOne({ where: { userId : userId} });
 }
 const removeKeyById = async (id) => {
     return await KeyToken.destroy({ where: { id } });

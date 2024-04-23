@@ -1,8 +1,16 @@
 'use strict'
 
 const { CreatedResponse, SuccessResponse } = require("../core/success.response");
-const { AccessService, login } = require("../services/Access.service");
+const { AccessService, login, logout } = require("../services/Access.service");
+
+const HEADER = {
+    CLIENT_ID: 'x-client-id',
+};
 class AccessController {
+    userId = null;
+    setUserId(req) {
+        this.userId = req.headers[HEADER.CLIENT_ID];
+    }
     login = async (req, res, next) => {
 
         new SuccessResponse({
@@ -12,8 +20,9 @@ class AccessController {
 
     }
     logout = async (req, res, next) => {
+        this.setUserId(req);
         new SuccessResponse({
-            metadata: await logout(res.keyStore),
+            metadata: await logout(this.userId),
         }).send(res)
     }
     signUp = async (req, res, next) => {

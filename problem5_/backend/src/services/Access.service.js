@@ -2,7 +2,7 @@
 const { Users } = require('../models');
 const bcrypt = require('bcrypt');
 const crypto = require('node:crypto');
-const { KeyTokenService, removeKeyById } = require('./key.token.service');
+const { KeyTokenService, removeKeyById, findByUserId } = require('./key.token.service');
 const { createTokenPair, verifyJWT } = require('../auth/authUtils');
 const { getInfoData } = require('../utils');
 const { findByEmail } = require('./User.service');
@@ -90,9 +90,14 @@ const AccessService = async (user) => {
 
 };
 
-const logout = async (keyStore) => {
-    const id = keyStore.id;
-    const deleteKey = await removeKeyById(id);
+const logout = async (userId) => {
+    console.log("userId", userId);
+    const foundKey = await findByUserId( userId );
+    if (!foundKey) {
+        throw new BadRequestError('Key not found');
+    }
+    console.log("foundKey", foundKey);
+    const deleteKey = await removeKeyById(foundKey.id);
     return deleteKey;
 }
 
