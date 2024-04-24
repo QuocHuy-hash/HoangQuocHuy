@@ -23,19 +23,4 @@ const findAll = async (where ,attributes , limit ,skip) => {
     });
 }
 
-const searchTask = async (searchKey , userId) => {
-    try {
-        
-        const keySearch = searchKey.keysearch
-        const regexSearch = new RegExp(keySearch, 'i');
-        console.log("searchKey : ", regexSearch);
-    return await Task.findAll({
-        where: { taskName: searchKey , userId: userId},
-        $text: { $search: regexSearch }
-    }, { $score: { $meta: 'textScore' } });
-    } catch (error) {
-console.log("error : " , error);
-    }
-
-}
-module.exports = { checkExist, findById, findAll, searchTask }
+module.exports = { checkExist, findById, findAll }

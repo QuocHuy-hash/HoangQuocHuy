@@ -1,6 +1,6 @@
 const { BadRequestError, NotFoundError } = require("../core/error.response");
 const { Task, Sequelize } = require("../models");
-const { checkExist, findById, findAll ,searchTask} = require("../models/repositorys/task.repo");
+const { checkExist, findById, findAll } = require("../models/repositorys/task.repo");
 
 const createTask = async (body, userId) => {
         const { taskName, description} = body;

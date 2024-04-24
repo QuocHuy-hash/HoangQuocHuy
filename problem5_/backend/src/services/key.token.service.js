@@ -6,14 +6,12 @@ const KeyTokenService = async ({ userId, publicKey, privateKey, refreshToken }) 
         let token = await KeyToken.findOne({ where: { userId } });
 
         if (token) {
-            // Cập nhật bản ghi nếu nó đã tồn tại
             token.publicKey = publicKey;
             token.privateKey = privateKey;
             token.refreshToken = refreshToken;
-            token.refreshTokenUsed = []; // Đặt lại mảng này nếu cần
+            token.refreshTokenUsed = []; 
             await token.save();
         } else {
-            // Tạo bản ghi mới nếu không tìm thấy
             token = await KeyToken.create({
                 userId,
                 publicKey,
